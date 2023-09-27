@@ -14,6 +14,10 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/about", (req, res) => {
+  res.sendFile(__dirname + "/about.html");
+});
+
 router.get("/product/:id", (req, res) => {
   res.json({
     id: req.params.id,
@@ -33,7 +37,7 @@ router.post("/product/", upload.single("image"), (req, res) => {
       image,
     });
   }
-  // res.sendFile(target);
+  res.sendFile(target);
 });
 
 router.get("/:category/:tag", (req, res) => {
