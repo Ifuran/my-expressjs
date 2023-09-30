@@ -1,7 +1,7 @@
-const sequelize = require("../../config/sequelize");
 const path = require("path");
 const food = require("./model");
 const fs = require("fs");
+const { Op } = require("sequelize");
 
 const index = async (req, res) => {
   const search = req.query.search;
